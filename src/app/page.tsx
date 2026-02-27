@@ -7,7 +7,7 @@ export default function Home() {
       <div className={styles.title}>
         <p>Page title here!</p>
       </div>
-    <Note></Note>
+    <Note message="this is the note I'm leaving!! I'm putting it in the props!"></Note>
     </div>
   );
 }

@@ -26,10 +26,11 @@
 
 .note{
   background-color: white;
+
   width: 50vw; /* The width determines the size */
   aspect-ratio: 1 / 1;
   padding: 1vw 4vw 4vw 4vw;
-  box-shadow: -0.3em 0.3em 1em rgba(0, 0, 0, 0.623);
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.623);
 }
 
 .pin {
@@ -40,7 +41,6 @@
 }
 
 .pinHead {
-  background-color: darkolivegreen;
   height: 15px;
   width: 15px;
   border-radius: 50%;
@@ -60,8 +60,15 @@
   width: 2px;
 }
 
-.noteText{
+.text {
   color: black;
   padding: 0;
   margin: 0;
+}
+
+.senderText {
+  color: black;
+  padding: 0;
+  margin: 0;
+  background-color: gre;
 }

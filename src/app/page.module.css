@@ -26,10 +26,10 @@
 
 .note{
   background-color: white;
-
-  width: 50vw; /* The width determines the size */
+  width: 40vw;
   aspect-ratio: 1 / 1;
-  padding: 1vw 4vw 4vw 4vw;
+  padding: 4px 15px 15px 15px;
+  margin: 15px;
   box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.623);
 }
 
@@ -48,14 +48,14 @@
 
 .pinShadow {
   width: 6px;
-  height: 6px;
+  height: 4px;
   background-color: rgba(0, 0, 0, 0.623);
   filter: blur(4px);
   margin-top: -4px;
 }
 
 .pinBody {
-  background-color: black;
+  background-color: grey;
   height: 10px;
   width: 2px;
 }
@@ -70,5 +70,21 @@
   color: black;
   padding: 0;
   margin: 0;
-  background-color: gre;
+  margin-top: 10px;
+}
+
+.pictureBox {
+  display: inline-block;
+  background-color: white;
+  padding: 5px;
+  margin: 15px;
+}
+
+.pictureImg {
+  display: block;
+  /* limits largest dimension to half of screen width*/
+  max-width: 50vw;
+  max-height: 50vw;
+  width: auto;
+  height: auto;
 }

@@ -10,14 +10,9 @@ export type NoteProps = {
 }
 
 export default function Note({color, message, sender} : NoteProps) {
-      
     
     const headColor= {
-        backgroundColor: `rgba(${color.r}, ${color.g}, ${color.b}, 1)`
-    };
-
-    const senderColor= {
-        backgroundColor: `rgba(${color.r}, ${color.g}, ${color.b}, 0.2)`
+        backgroundColor: color
     };
 
     return (
@@ -28,6 +23,6 @@ export default function Note({color, message, sender} : NoteProps) {
                 <div className={styles.pinShadow}></div>
             </div>
             <p className={styles.text}>{message}</p>
-            <p style={headColor} className={styles.senderText}>{`-` + sender}</p>
+            <p className={styles.senderText}>{`- ` + sender}</p>
         </div>);
 }

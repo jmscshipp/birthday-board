@@ -1,7 +1,4 @@
-
-import { Background } from "@react-navigation/elements";
 import styles from "./page.module.css";
-
 
 export type NoteProps = {
     color : string;

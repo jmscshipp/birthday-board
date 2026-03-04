@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import Pin from "./Pin";
 
 type PictureProps = {
     image : string;
@@ -6,18 +7,9 @@ type PictureProps = {
 }
 
 export default function Picture({image, sender} : PictureProps) {
-
-    const headColor= {
-        backgroundColor: 'black'
-    };
-
     return (
         <div className={styles.pictureBox}>
-                <div className={styles.pin}>
-                    <div style={headColor} className={styles.pinHead}></div>
-                    <div className={styles.pinBody}></div>
-                    <div className={styles.pinShadow}></div>
-                </div>
+            <Pin color={'black'}></Pin>
             <img src={image} className={styles.pictureImg}></img>
         </div>);
 }

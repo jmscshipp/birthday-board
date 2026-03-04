@@ -8,9 +8,9 @@ export default function Home() {
         <div className={styles.title}>
           <p>Page title here!</p>
         </div>
-        <Note color="black" message="this is the note I'm leaving!! I'm putting it in the props!" sender="james"></Note>
+        <Note color="black" message="this is the note I'm leaving!! I'm putting it in the props!" sender="james" placement="right"></Note>
         <Picture image="/images/botanic-garden-horizontal.jpg" sender=""></Picture>
-        <Note color="orange" message="another note! this one is shorter" sender="james"></Note>
+        <Note color="orange" message="another note! this one is shorter" sender="james" placement ="left"></Note>
         <Picture image="/images/botanic-garden-vertical.jpg" sender=""></Picture>
     </div>
   );

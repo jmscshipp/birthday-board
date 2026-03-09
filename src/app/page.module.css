@@ -11,9 +11,9 @@ body {
   background-repeat: repeat;
   background-size: cover;
 
-  border: 3px solid #2c3829;
+  border: 3px solid #27451d;
   box-shadow: 
-    inset 0 0 0 10px #40513B,
+    inset 0 0 0 10px #38632a,
     inset 0 0 0 13px #1a0e00,
     inset 16 16 20 -6px rgba(0, 0, 0, 0.623),
     inset -16 -16 20 -6px rgba(0, 0, 0, 0.623);
@@ -43,7 +43,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 15px;
   z-index: 11;
 }
 
@@ -69,10 +68,15 @@ body {
   width: 2px;
 }
 
+.moveUp {
+    margin-top: -15px;
+}
+
 .text {
   color: black;
   padding: 0;
   margin: 0;
+  margin-top: 35px;
 }
 
 .senderText {

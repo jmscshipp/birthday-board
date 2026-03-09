@@ -1,6 +1,6 @@
 import styles from './page.module.css';
-import Note from './Note';
-import Picture from './Picture';
+import Note from '../components/Note/Note';
+import Picture from '../components/Picture/Picture';
 
 export default function Home() {
     return (

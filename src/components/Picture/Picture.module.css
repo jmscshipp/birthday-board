@@ -1,0 +1,16 @@
+.container {
+    display: inline-block;
+    background-color: white;
+    padding: 10px;
+    margin: 15px;
+    box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.623);
+}
+
+.image {
+    display: block;
+    /* limits largest dimension to 75% of screen width*/
+    max-width: 75vw;
+    max-height: 75vw;
+    width: auto;
+    height: auto;
+}

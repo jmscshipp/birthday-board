@@ -1,0 +1,32 @@
+.container {
+    background-color: white;
+    width: 40vw;
+    aspect-ratio: 1 / 1;
+    padding: 4px 15px 15px 15px;
+    margin: 15px;
+    box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.623);
+}
+
+.text {
+    color: black;
+    padding: 0;
+    margin: 0;
+    margin-top: 35px;
+}
+
+.senderText {
+    color: black;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.placeLeft {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.placeRight {
+    display: flex;
+    justify-content: flex-end;
+}

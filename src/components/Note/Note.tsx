@@ -1,5 +1,5 @@
-import styles from './page.module.css';
-import Pin from './Pin';
+import styles from './Note.module.css';
+import Pin from '../Pin/Pin';
 
 export type NoteProps = {
     color: string;
@@ -15,7 +15,7 @@ export default function Note({ color, message, sender, placement }: NoteProps) {
 
     return (
         <div className={placement == 'left' ? styles.placeLeft : styles.placeRight}>
-            <div className={styles.note}>
+            <div className={styles.container}>
                 <Pin color={color}></Pin>
                 <p className={styles.text}>{message}</p>
                 <p className={styles.senderText}>{`- ` + sender}</p>

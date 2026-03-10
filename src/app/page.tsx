@@ -3,53 +3,61 @@ import Note from '../components/Note/Note';
 import Picture from '../components/Picture/Picture';
 
 type NoteData = {
+    kind: 'note';
     color: string;
     message: string;
     sender: string;
 };
 
+type PictureData = {
+    kind: 'picture';
+    image: string;
+    sender: string;
+};
+
+type BoardItem = NoteData | PictureData;
+
 export default function Home() {
-    const testData: NoteData[] = [
+    const testData: BoardItem[] = [
         {
+            kind: 'note',
             color: 'black',
             message: "this is the note I'm leaving!! I'm putting it in the props!",
             sender: 'howard',
         },
         {
-            color: 'red',
-            message: 'another note! this one is shorter',
-            sender: 'james',
+            kind: 'note',
+            color: 'black',
+            message: "this is the note I'm leaving!! I'm putting it in the props!",
+            sender: 'howard',
         },
         {
-            color: 'orange',
-            message:
-                "this not is very important to me and so I'm gonna  make it extra long to fill the space yes.",
-            sender: 'Lisa',
+            kind: 'picture',
+            image: '/images/botanic-garden-horizontal.jpg',
+            sender: 'howard',
         },
         {
-            color: 'green',
-            message: 'random note. I like to keep things brief',
-            sender: 'thomas',
+            kind: 'note',
+            color: 'black',
+            message: "this is the note I'm leaving!! I'm putting it in the props!",
+            sender: 'howard',
         },
         {
-            color: 'green',
-            message: 'random note. I like to keep things brief',
-            sender: 'thomas',
+            kind: 'note',
+            color: 'black',
+            message: "this is the note I'm leaving!! I'm putting it in the props!",
+            sender: 'howard',
         },
         {
-            color: 'green',
-            message: 'random note. I like to keep things brief',
-            sender: 'thomas',
+            kind: 'note',
+            color: 'black',
+            message: "this is the note I'm leaving!! I'm putting it in the props!",
+            sender: 'howard',
         },
         {
-            color: 'green',
-            message: 'random note. I like to keep things brief',
-            sender: 'thomas',
-        },
-        {
-            color: 'green',
-            message: 'random note. I like to keep things brief',
-            sender: 'thomas',
+            kind: 'picture',
+            image: '/images/botanic-garden-vertical.jpg',
+            sender: 'howard',
         },
     ];
 
@@ -60,17 +68,21 @@ export default function Home() {
             </div>
             <div>
                 {testData.map((note, index) => {
-                    return (
-                        <Note
-                            key={index}
-                            color={note.color}
-                            message={note.message}
-                            sender={note.sender}
-                            placement={
-                                index % 3 == 0 ? 'center' : index % 2 == 0 ? 'left' : 'right'
-                            }
-                        ></Note>
-                    );
+                    if (note.kind === 'picture') {
+                        return <Picture key={index} image={note.image} sender={note.sender} />;
+                    } else if (note.kind === 'note') {
+                        return (
+                            <Note
+                                key={index}
+                                color={note.color}
+                                message={note.message}
+                                sender={note.sender}
+                                placement={
+                                    index % 3 == 0 ? 'center' : index % 2 == 0 ? 'left' : 'right'
+                                }
+                            ></Note>
+                        );
+                    }
                 })}
             </div>
         </div>

@@ -14,3 +14,13 @@
     width: auto;
     height: auto;
 }
+
+.placeLeft {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.placeRight {
+    display: flex;
+    justify-content: flex-end;
+}

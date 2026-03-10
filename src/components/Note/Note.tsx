@@ -13,8 +13,14 @@ export default function Note({ color, message, sender, placement }: NoteProps) {
         backgroundColor: color,
     };
 
+    const getPlacementStyle = () => {
+        if (placement === 'left') return styles.placeLeft;
+        if (placement === 'right') return styles.placeRight;
+        return styles.placeCenter;
+    };
+
     return (
-        <div className={placement == 'left' ? styles.placeLeft : styles.placeRight}>
+        <div className={getPlacementStyle()}>
             <div className={styles.container}>
                 <Pin color={color}></Pin>
                 <p className={styles.text}>{message}</p>

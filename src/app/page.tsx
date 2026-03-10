@@ -31,6 +31,26 @@ export default function Home() {
             message: 'random note. I like to keep things brief',
             sender: 'thomas',
         },
+        {
+            color: 'green',
+            message: 'random note. I like to keep things brief',
+            sender: 'thomas',
+        },
+        {
+            color: 'green',
+            message: 'random note. I like to keep things brief',
+            sender: 'thomas',
+        },
+        {
+            color: 'green',
+            message: 'random note. I like to keep things brief',
+            sender: 'thomas',
+        },
+        {
+            color: 'green',
+            message: 'random note. I like to keep things brief',
+            sender: 'thomas',
+        },
     ];
 
     return (
@@ -46,7 +66,9 @@ export default function Home() {
                             color={note.color}
                             message={note.message}
                             sender={note.sender}
-                            placement={index % 2 == 0 ? 'left' : 'right'}
+                            placement={
+                                index % 3 == 0 ? 'center' : index % 2 == 0 ? 'left' : 'right'
+                            }
                         ></Note>
                     );
                 })}

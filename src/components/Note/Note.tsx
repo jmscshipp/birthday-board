@@ -6,9 +6,10 @@ export type NoteProps = {
     message: string;
     sender: string;
     placement: string;
+    margin: number;
 };
 
-export default function Note({ color, message, sender, placement }: NoteProps) {
+export default function Note({ color, message, sender, placement, margin }: NoteProps) {
     const headColor = {
         backgroundColor: color,
     };
@@ -20,7 +21,7 @@ export default function Note({ color, message, sender, placement }: NoteProps) {
     };
 
     return (
-        <div className={getPlacementStyle()}>
+        <div style={{ marginTop: margin + 'px' }} className={getPlacementStyle()}>
             <div className={styles.container}>
                 <Pin color={color}></Pin>
                 <p className={styles.text}>{message}</p>

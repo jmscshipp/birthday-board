@@ -4,11 +4,12 @@ import Pin from '../Pin/Pin';
 type PictureProps = {
     image: string;
     sender: string;
+    margin: number;
 };
 
-export default function Picture({ image, sender }: PictureProps) {
+export default function Picture({ image, sender, margin }: PictureProps) {
     return (
-        <div className={styles.container}>
+        <div style={{ marginTop: margin + 'px' }} className={styles.container}>
             <Pin color={'black'}></Pin>
             <img src={image} className={styles.image}></img>
         </div>

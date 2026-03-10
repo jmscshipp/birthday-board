@@ -7,60 +7,69 @@ type NoteData = {
     color: string;
     message: string;
     sender: string;
+    margin: number;
 };
 
 type PictureData = {
     kind: 'picture';
     image: string;
     sender: string;
+    margin: number;
 };
 
 type BoardItem = NoteData | PictureData;
 
-export default function Home() {
-    const testData: BoardItem[] = [
-        {
-            kind: 'note',
-            color: 'black',
-            message: "this is the note I'm leaving!! I'm putting it in the props!",
-            sender: 'howard',
-        },
-        {
-            kind: 'note',
-            color: 'black',
-            message: "this is the note I'm leaving!! I'm putting it in the props!",
-            sender: 'howard',
-        },
-        {
-            kind: 'picture',
-            image: '/images/botanic-garden-horizontal.jpg',
-            sender: 'howard',
-        },
-        {
-            kind: 'note',
-            color: 'black',
-            message: "this is the note I'm leaving!! I'm putting it in the props!",
-            sender: 'howard',
-        },
-        {
-            kind: 'note',
-            color: 'black',
-            message: "this is the note I'm leaving!! I'm putting it in the props!",
-            sender: 'howard',
-        },
-        {
-            kind: 'note',
-            color: 'black',
-            message: "this is the note I'm leaving!! I'm putting it in the props!",
-            sender: 'howard',
-        },
-        {
-            kind: 'picture',
-            image: '/images/botanic-garden-vertical.jpg',
-            sender: 'howard',
-        },
-    ];
+const testData: BoardItem[] = [
+    {
+        kind: 'note',
+        color: 'black',
+        message: "this is the note I'm leaving!! I'm putting it in the props!",
+        sender: 'howard',
+        margin: Math.random() * -60,
+    },
+    {
+        kind: 'note',
+        color: 'black',
+        message: "this is the note I'm leaving!! I'm putting it in the props!",
+        sender: 'howard',
+        margin: Math.random() * -60,
+    },
+    {
+        kind: 'picture',
+        image: '/images/botanic-garden-horizontal.jpg',
+        sender: 'howard',
+        margin: Math.random() * -60,
+    },
+    {
+        kind: 'note',
+        color: 'black',
+        message: "this is the note I'm leaving!! I'm putting it in the props!",
+        sender: 'howard',
+        margin: Math.random() * -60,
+    },
+    {
+        kind: 'note',
+        color: 'black',
+        message: "this is the note I'm leaving!! I'm putting it in the props!",
+        sender: 'howard',
+        margin: Math.random() * -60,
+    },
+    {
+        kind: 'note',
+        color: 'black',
+        message: "this is the note I'm leaving!! I'm putting it in the props!",
+        sender: 'howard',
+        margin: Math.random() * -60,
+    },
+    {
+        kind: 'picture',
+        image: '/images/botanic-garden-vertical.jpg',
+        sender: 'howard',
+        margin: Math.random() * -60,
+    },
+];
 
+export default function Home() {
     return (
         <div className={styles.page}>
             <div className={styles.title}>
@@ -69,7 +78,14 @@ export default function Home() {
             <div>
                 {testData.map((note, index) => {
                     if (note.kind === 'picture') {
-                        return <Picture key={index} image={note.image} sender={note.sender} />;
+                        return (
+                            <Picture
+                                key={index}
+                                image={note.image}
+                                sender={note.sender}
+                                margin={note.margin}
+                            />
+                        );
                     } else if (note.kind === 'note') {
                         return (
                             <Note
@@ -80,6 +96,7 @@ export default function Home() {
                                 placement={
                                     index % 3 == 0 ? 'center' : index % 2 == 0 ? 'left' : 'right'
                                 }
+                                margin={note.margin}
                             ></Note>
                         );
                     }

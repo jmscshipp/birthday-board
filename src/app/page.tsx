@@ -1,6 +1,7 @@
 import styles from './page.module.css';
 import Note from '../components/Note/Note';
 import Picture from '../components/Picture/Picture';
+import NoteModal from '@/components/NoteModal/NoteModal';
 
 type NoteData = {
     kind: 'note';
@@ -70,6 +71,8 @@ const testData: BoardItem[] = [
 ];
 
 export default function Home() {
+    return <NoteModal isOpen={true} onClose={() => {}}></NoteModal>;
+
     return (
         <div className={styles.page}>
             <div className={styles.title}>

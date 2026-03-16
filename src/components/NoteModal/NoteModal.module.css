@@ -11,21 +11,32 @@
     background-color: rgba(0, 0, 0, 0.623);
 }
 
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 160px;
+}
+
 .noteContainer {
     background-color: white;
-    width: 40vw;
+    box-sizing: border-box;
+    width: 100%;
     aspect-ratio: 1 / 1;
     padding: 4px 15px 15px 15px;
-    margin: 15px;
     box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.623);
 }
 
 .header {
-    width: 40vw;
-    flex-direction: column;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .settings {
+    display: flex;
+    gap: 10px;
 }
 
 .noteInputArea {
@@ -35,13 +46,27 @@
 }
 
 .colorChangeButton {
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    border: 2px solid white;
+    border-style: outset;
 }
 
 .fontChangeButton {
+    background-color: white;
+    border: 2px solid white;
+    border-style: outset;
 }
 
 .exitButton {
+    background-color: white;
+    border: 2px solid white;
+    border-style: outset;
 }
 
 .pinButton {
+    background-color: white;
+    border: 2px solid white;
+    border-style: outset;
 }

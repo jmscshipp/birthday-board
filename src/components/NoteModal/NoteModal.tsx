@@ -10,16 +10,21 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
 
     return (
         <div className={styles.background}>
-            <div className={styles.header}>
-                <p>x</p>
-                <div className={styles.settings}>
-                    <p>font</p>
-                    <p>color</p>
+            <div className={styles.modal}>
+                <div className={styles.header}>
+                    <button className={styles.exitButton}>x</button>
+                    <div className={styles.settings}>
+                        <button className={styles.fontChangeButton}>Font</button>
+                        <button className={styles.colorChangeButton}></button>
+                    </div>
                 </div>
-            </div>
-            <div className={styles.noteContainer}>
-                <h2>Note</h2>
-                <p>This is a simple note modal.</p>
+                <div className={styles.noteContainer}>
+                    <h2>Note</h2>
+                    <p>This is a simple note modal.</p>
+                </div>
+                <button className={styles.pinButton} disabled={true}>
+                    All done, pin it!
+                </button>
             </div>
         </div>
     );

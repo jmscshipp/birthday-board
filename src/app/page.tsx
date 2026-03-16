@@ -25,7 +25,7 @@ const testData: BoardItem[] = [
         kind: 'note',
         color: 'black',
         message:
-            "Happy Birthday Selali! You're so special to me and I'm lucky to have you in my life :) Have a great day!",
+            "Happy Birthday Selali! You're so special to me and I'm lucky to have you in my life :) Have a great day! another tes",
         sender: 'howard',
         margin: Math.random() * -60,
     },

@@ -72,7 +72,7 @@ const testData: BoardItem[] = [
 ];
 
 export default function Home() {
-    //return <NoteModal isOpen={true} onClose={() => {}}></NoteModal>;
+    return <NoteModal isOpen={true} onClose={() => {}}></NoteModal>;
     return (
         <div className={styles.page}>
             <div className={styles.title}>

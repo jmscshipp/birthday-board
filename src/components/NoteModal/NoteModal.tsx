@@ -19,7 +19,6 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
                     </div>
                 </div>
                 <div className={styles.noteContainer}>
-                    <h2>Note</h2>
                     <p>This is a simple note modal.</p>
                 </div>
                 <button className={styles.pinButton} disabled={true}>

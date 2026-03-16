@@ -72,38 +72,48 @@ const testData: BoardItem[] = [
 ];
 
 export default function Home() {
-    return <NoteModal isOpen={true} onClose={() => {}}></NoteModal>;
+    //return <NoteModal isOpen={true} onClose={() => {}}></NoteModal>;
     return (
-        <div className={styles.page}>
-            <div className={styles.title}>
-                <p>Page title here!</p>
-            </div>
-            <div>
-                {testData.map((note, index) => {
-                    if (note.kind === 'picture') {
-                        return (
-                            <Picture
-                                key={index}
-                                image={note.image}
-                                sender={note.sender}
-                                margin={note.margin}
-                            />
-                        );
-                    } else if (note.kind === 'note') {
-                        return (
-                            <Note
-                                key={index}
-                                color={note.color}
-                                message={note.message}
-                                sender={note.sender}
-                                placement={
-                                    index % 3 == 0 ? 'center' : index % 2 == 0 ? 'left' : 'right'
-                                }
-                                margin={note.margin}
-                            ></Note>
-                        );
-                    }
-                })}
+        <div>
+            <div className={styles.page}>
+                <div className={styles.title}>
+                    <p>Page title here!</p>
+                </div>
+                <div className={styles.buttonContainer}>
+                    <button className={styles.button}>Add a note</button>
+                    <button className={styles.button}>Add a photo</button>
+                </div>
+                <div>
+                    {testData.map((note, index) => {
+                        if (note.kind === 'picture') {
+                            return (
+                                <Picture
+                                    key={index}
+                                    image={note.image}
+                                    sender={note.sender}
+                                    margin={note.margin}
+                                />
+                            );
+                        } else if (note.kind === 'note') {
+                            return (
+                                <Note
+                                    key={index}
+                                    color={note.color}
+                                    message={note.message}
+                                    sender={note.sender}
+                                    placement={
+                                        index % 3 == 0
+                                            ? 'center'
+                                            : index % 2 == 0
+                                              ? 'left'
+                                              : 'right'
+                                    }
+                                    margin={note.margin}
+                                ></Note>
+                            );
+                        }
+                    })}
+                </div>
             </div>
         </div>
     );

@@ -23,3 +23,16 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.button {
+    background-color: white;
+    border: 2px solid white;
+    border-style: outset;
+    font-size: 21px;
+}

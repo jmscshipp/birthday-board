@@ -76,9 +76,13 @@ export default function Home() {
     return (
         <div>
             <div className={styles.page}>
-                <div className={styles.title}>
-                    <p>Page title here!</p>
-                </div>
+                <Note
+                    color={'black'}
+                    message={'Title message here'}
+                    sender={'James'}
+                    placement={'center'}
+                    margin={0}
+                ></Note>
                 <div className={styles.buttonContainer}>
                     <button className={styles.button}>Add a note</button>
                     <button className={styles.button}>Add a photo</button>

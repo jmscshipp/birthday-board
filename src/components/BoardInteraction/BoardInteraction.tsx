@@ -1,10 +1,19 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import NoteModal from '../NoteModal/NoteModal';
 import styles from './BoardInteraction.module.css';
 
 export default function BoardInteraction() {
     const [modalOpen, setModalOpen] = useState(false);
+
+    // preventing background scrolling while modal is open
+    useEffect(() => {
+        if (modalOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [modalOpen]);
 
     return (
         <div>

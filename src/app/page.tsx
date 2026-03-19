@@ -1,7 +1,7 @@
 import styles from './page.module.css';
 import Note from '../components/Note/Note';
 import Picture from '../components/Picture/Picture';
-import NoteModal from '@/components/NoteModal/NoteModal';
+import BoardInteraction from '@/components/BoardInteraction/BoardInteraction';
 
 type NoteData = {
     kind: 'note';
@@ -72,7 +72,6 @@ const testData: BoardItem[] = [
 ];
 
 export default function Home() {
-    //return <NoteModal isOpen={true} onClose={() => {}}></NoteModal>;
     return (
         <div>
             <div className={styles.page}>
@@ -83,10 +82,8 @@ export default function Home() {
                     placement={'center'}
                     margin={0}
                 ></Note>
-                <div className={styles.buttonContainer}>
-                    <button className={styles.button}>Add a note</button>
-                    <button className={styles.button}>Add a photo</button>
-                </div>
+                <BoardInteraction></BoardInteraction>
+
                 <div>
                     {testData.map((note, index) => {
                         if (note.kind === 'picture') {

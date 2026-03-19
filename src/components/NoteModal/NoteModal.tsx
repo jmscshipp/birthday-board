@@ -9,10 +9,12 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
     if (!isOpen) return null;
 
     return (
-        <div className={styles.background}>
-            <div className={styles.modal}>
+        <div className={styles.background} onClick={onClose}>
+            <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
                 <div className={styles.header}>
-                    <button className={styles.exitButton}>x</button>
+                    <button className={styles.exitButton} onClick={() => onClose()}>
+                        x
+                    </button>
                     <div className={styles.settings}>
                         <button className={styles.fontChangeButton}>Font</button>
                         <button className={styles.colorChangeButton}></button>

@@ -23,18 +23,3 @@ body {
     display: flex;
     justify-content: center;
 }
-
-.buttonContainer {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-.button {
-    background-color: #27451d;
-    border: 2px solid #1a0e00;
-    color: white;
-    border-style: outset;
-    font-size: 21px;
-    box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.623);
-}

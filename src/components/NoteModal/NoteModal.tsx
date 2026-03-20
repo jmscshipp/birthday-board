@@ -53,7 +53,7 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
                     </button>
                     <div className={styles.settings}>
                         <button
-                            style={{ fontFamily: font }}
+                            style={{ fontFamily: font, lineHeight: '34px' }}
                             className={styles.fontChangeButton}
                             onClick={cycleFont}
                         >
@@ -66,9 +66,33 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
                         ></button>
                     </div>
                 </div>
-                <div style={{ fontFamily: font }} className={styles.noteContainer}>
-                    <Pin color={pinColor}></Pin>
-                    <p>this is the note I&lsquo;m leaving!! I&lsquo;m putting it in the props!</p>
+                <div
+                    style={{ fontFamily: font, lineHeight: '34px' }}
+                    className={styles.noteContainer}
+                >
+                    <div className={styles.pinWrapper}>
+                        <Pin color={pinColor}></Pin>
+                    </div>
+                    <textarea
+                        className={styles.noteInputArea}
+                        name="noteDescription"
+                        placeholder="Write your message here!"
+                        rows={5}
+                        cols={25}
+                    ></textarea>
+                    <div className={styles.senderWrapper}>
+                        <label htmlFor="sender">-</label>
+                        <textarea
+                            id="sender"
+                            className={styles.senderInputArea}
+                            name="noteSender"
+                            placeholder="And name here"
+                            rows={1}
+                            cols={25}
+                        ></textarea>
+                    </div>
+
+                    {/* <p>this is the note I&lsquo;m leaving!! I&lsquo;m putting it in the props!</p> */}
                 </div>
                 <button className={styles.pinButton} disabled={true}>
                     All done, pin it!

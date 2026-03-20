@@ -1,14 +1,46 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import {
+    Geist,
+    Kalam,
+    Cedarville_Cursive,
+    Comic_Relief,
+    New_Rocker,
+    Jersey_10,
+} from 'next/font/google';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
     subsets: ['latin'],
 });
 
-const geistMono = Geist_Mono({
-    variable: '--font-geist-mono',
+const kalam = Kalam({
+    variable: '--font-kalam',
     subsets: ['latin'],
+    weight: '400',
+});
+
+const cedarvilleCursive = Cedarville_Cursive({
+    variable: '--font-cedarville-cursive',
+    subsets: ['latin'],
+    weight: '400',
+});
+
+const comicRelief = Comic_Relief({
+    variable: '--font-comic-relief',
+    subsets: ['latin'],
+    weight: '400',
+});
+
+const newRocker = New_Rocker({
+    variable: '--font-new-rocker',
+    subsets: ['latin'],
+    weight: '400',
+});
+
+const jersey10 = Jersey_10({
+    variable: '--font-jersey-10',
+    subsets: ['latin'],
+    weight: '400',
 });
 
 export const metadata: Metadata = {
@@ -23,7 +55,27 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+            <body
+                className={`
+                ${geistSans.variable} 
+                ${kalam.variable}
+                ${cedarvilleCursive.variable}
+                ${comicRelief.variable}
+                ${newRocker.variable}
+                ${jersey10.variable}
+            `}
+            >
+                {children}
+            </body>
         </html>
     );
 }
+
+/*
+regular sans-serif (geist)
+handwriting (kalam)
+cursive (cerdarville cursive)
+comic sans (comic releif)
+goth (new rocker)
+pixel (jersey 10)
+*/

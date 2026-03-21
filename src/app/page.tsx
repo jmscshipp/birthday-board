@@ -2,6 +2,7 @@ import styles from './page.module.css';
 import Note from '../components/Note/Note';
 import Picture from '../components/Picture/Picture';
 import BoardInteraction from '@/components/BoardInteraction/BoardInteraction';
+import { getNotes } from '@/lib/retrieveNotes';
 
 type NoteData = {
     kind: 'note';
@@ -71,7 +72,9 @@ const testData: BoardItem[] = [
     },
 ];
 
-export default function Home() {
+export default async function Home() {
+    const notes: NoteData[] = await getNotes();
+
     return (
         <div>
             <div className={styles.page}>
@@ -85,8 +88,8 @@ export default function Home() {
                 <BoardInteraction></BoardInteraction>
 
                 <div>
-                    {testData.map((note, index) => {
-                        if (note.kind === 'picture') {
+                    {notes.map((note, index) => {
+                        /*if (note.kind === 'picture') {
                             return (
                                 <Picture
                                     key={index}
@@ -95,7 +98,7 @@ export default function Home() {
                                     margin={note.margin}
                                 />
                             );
-                        } else if (note.kind === 'note') {
+                        } else */ if (note.kind === 'note') {
                             return (
                                 <Note
                                     key={index}
@@ -119,5 +122,3 @@ export default function Home() {
         </div>
     );
 }
-
-//<Picture image="/images/botanic-garden-vertical.jpg" sender=""></Picture>

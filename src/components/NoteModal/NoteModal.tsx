@@ -3,6 +3,7 @@ import styles from './NoteModal.module.css';
 import Pin from '../Pin/Pin';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
+import { useRouter } from 'next/navigation';
 
 type NoteModalProps = {
     isOpen: boolean;
@@ -22,6 +23,7 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
     const [pinColor, setPinColor] = useState('#38632a');
     const [noteText, setNoteText] = useState('');
     const [senderText, setSenderText] = useState('');
+    const router = useRouter();
 
     if (!isOpen) return null;
 
@@ -56,8 +58,12 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
                 sender: senderText,
                 color: pinColor,
                 font: font,
+                margin: Math.round(Math.random() * -60),
                 createdAt: new Date(),
             });
+            setNoteText('');
+            setSenderText('');
+            router.refresh();
             onClose();
         } catch (error) {
             console.error('Having trouble saving note:', error);

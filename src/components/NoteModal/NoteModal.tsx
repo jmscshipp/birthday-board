@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import styles from './NoteModal.module.css';
 import Pin from '../Pin/Pin';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
 
 type NoteModalProps = {
     isOpen: boolean;
@@ -46,6 +48,21 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
             const currentIndex = pinColors.indexOf(prevColor);
             return pinColors[(currentIndex + 1) % pinColors.length];
         });
+
+    const saveNote = async () => {
+        try {
+            await addDoc(collection(db, 'notes'), {
+                message: noteText,
+                sender: senderText,
+                color: pinColor,
+                font: font,
+                createdAt: new Date(),
+            });
+            onClose();
+        } catch (error) {
+            console.error('Having trouble saving note:', error);
+        }
+    };
 
     return (
         <div className={styles.background} onClick={onClose}>
@@ -102,6 +119,7 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
                 <button
                     className={styles.pinButton}
                     disabled={!noteText.trim() || !senderText.trim()}
+                    onClick={() => saveNote()}
                 >
                     All done, pin it!
                 </button>

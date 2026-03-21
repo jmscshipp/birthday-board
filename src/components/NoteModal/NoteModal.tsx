@@ -18,6 +18,9 @@ pixel (jersey
 export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
     const [font, setFont] = useState('var(--font-geist-sans)');
     const [pinColor, setPinColor] = useState('#38632a');
+    const [noteText, setNoteText] = useState('');
+    const [senderText, setSenderText] = useState('');
+
     if (!isOpen) return null;
 
     // font control
@@ -77,6 +80,8 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
                         className={styles.noteInputArea}
                         name="noteDescription"
                         placeholder="Write your message here!"
+                        value={noteText}
+                        onChange={(e) => setNoteText(e.target.value)}
                         rows={5}
                         cols={25}
                     ></textarea>
@@ -87,14 +92,17 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
                             className={styles.senderInputArea}
                             name="noteSender"
                             placeholder="And name here"
+                            value={senderText}
+                            onChange={(e) => setSenderText(e.target.value)}
                             rows={1}
                             cols={25}
                         ></textarea>
                     </div>
-
-                    {/* <p>this is the note I&lsquo;m leaving!! I&lsquo;m putting it in the props!</p> */}
                 </div>
-                <button className={styles.pinButton} disabled={true}>
+                <button
+                    className={styles.pinButton}
+                    disabled={!noteText.trim() || !senderText.trim()}
+                >
                     All done, pin it!
                 </button>
             </div>

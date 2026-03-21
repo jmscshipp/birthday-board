@@ -61,6 +61,8 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
                 margin: Math.round(Math.random() * -60),
                 createdAt: new Date(),
             });
+            setPinColor('#38632a');
+            setFont('var(--font-geist-sans)');
             setNoteText('');
             setSenderText('');
             router.refresh();

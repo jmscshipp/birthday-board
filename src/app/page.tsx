@@ -3,6 +3,7 @@ import Note from '../components/Note/Note';
 import Picture from '../components/Picture/Picture';
 import BoardInteraction from '@/components/BoardInteraction/BoardInteraction';
 import { getNotes } from '@/lib/retrieveNotes';
+import { getPictures } from '@/lib/retrievePictures';
 import MessageModal from '@/components/MessageModal/MessageModal';
 
 type NoteData = {
@@ -74,7 +75,13 @@ const testData: BoardItem[] = [
 ];
 
 export default async function Home() {
-    const notes: NoteData[] = await getNotes();
+    const [notes, pictures] = await Promise.all([getNotes(), getPictures()]);
+    const boardItems: BoardItem[] = [...notes, ...pictures].sort((a, b) => {
+        const aTime = new Date(a.createdAt).getTime();
+        const bTime = new Date(b.createdAt).getTime();
+        return aTime - bTime;
+    });
+    boardItems[0].margin = 0;
 
     return (
         <div>
@@ -89,23 +96,23 @@ export default async function Home() {
                 <BoardInteraction></BoardInteraction>
 
                 <div>
-                    {notes.map((note, index) => {
-                        /*if (note.kind === 'picture') {
+                    {boardItems.map((item, index) => {
+                        if (item.kind === 'picture') {
                             return (
                                 <Picture
                                     key={index}
-                                    image={note.image}
-                                    sender={note.sender}
-                                    margin={note.margin}
+                                    image={item.image}
+                                    sender={item.sender}
+                                    margin={item.margin}
                                 />
                             );
-                        } else */ if (note.kind === 'note') {
+                        } else if (item.kind === 'note') {
                             return (
                                 <Note
                                     key={index}
-                                    color={note.color}
-                                    message={note.message}
-                                    sender={note.sender}
+                                    color={item.color}
+                                    message={item.message}
+                                    sender={item.sender}
                                     placement={
                                         index % 3 == 0
                                             ? 'center'
@@ -113,7 +120,7 @@ export default async function Home() {
                                               ? 'left'
                                               : 'right'
                                     }
-                                    margin={note.margin}
+                                    margin={item.margin}
                                 ></Note>
                             );
                         }

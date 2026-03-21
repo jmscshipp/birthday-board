@@ -2,31 +2,37 @@
 import { useEffect, useState } from 'react';
 import NoteModal from '../NoteModal/NoteModal';
 import styles from './BoardInteraction.module.css';
+import MessageModal from '../MessageModal/MessageModal';
 
 export default function BoardInteraction() {
-    const [modalOpen, setModalOpen] = useState(false);
+    const [noteModalOpen, setNoteModalOpen] = useState(false);
+    const [messageModalOpen, setMessageModalOpen] = useState(true);
 
     // preventing background scrolling while modal is open
     useEffect(() => {
-        if (modalOpen) {
+        if (noteModalOpen || messageModalOpen) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = 'auto';
         }
-    }, [modalOpen]);
+    }, [noteModalOpen, messageModalOpen]);
 
     return (
         <div>
             <div className={styles.buttonContainer}>
-                <button className={styles.button} onClick={() => setModalOpen(true)}>
+                <button className={styles.button} onClick={() => setNoteModalOpen(true)}>
                     Add a note
                 </button>
                 <button className={styles.button}>Add a photo</button>
             </div>
+            <MessageModal
+                isOpen={messageModalOpen}
+                onClose={() => setMessageModalOpen(false)}
+            ></MessageModal>
             <NoteModal
-                isOpen={modalOpen}
+                isOpen={noteModalOpen}
                 onClose={() => {
-                    setModalOpen(false);
+                    setNoteModalOpen(false);
                 }}
             ></NoteModal>
         </div>

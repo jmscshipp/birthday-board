@@ -3,6 +3,7 @@ import Note from '../components/Note/Note';
 import Picture from '../components/Picture/Picture';
 import BoardInteraction from '@/components/BoardInteraction/BoardInteraction';
 import { getNotes } from '@/lib/retrieveNotes';
+import MessageModal from '@/components/MessageModal/MessageModal';
 
 type NoteData = {
     kind: 'note';
@@ -118,6 +119,10 @@ export default async function Home() {
                         }
                     })}
                 </div>
+                <p className={styles.signature}>
+                    this site made by{' '}
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">james :)</a>
+                </p>
             </div>
         </div>
     );

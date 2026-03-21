@@ -23,3 +23,17 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.signature {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: #f5deb3;
+    font-family: var(--font-geist-sans);
+}
+
+.signature a {
+    color: #f5deb3;
+    text-decoration: underline;
+    margin-left: 4px;
+}

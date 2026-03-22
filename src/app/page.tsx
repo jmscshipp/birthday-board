@@ -5,7 +5,9 @@ import BoardInteraction from '@/components/BoardInteraction/BoardInteraction';
 import { getNotes } from '@/lib/retrieveNotes';
 import { getPictures } from '@/lib/retrievePictures';
 import MessageModal from '@/components/MessageModal/MessageModal';
+
 export const dynamic = 'force-dynamic';
+
 type NoteData = {
     kind: 'note';
     color: string;
@@ -81,7 +83,9 @@ export default async function Home() {
         const bTime = new Date(b.createdAt).getTime();
         return aTime - bTime;
     });
-    boardItems[0].margin = 0;
+    if (boardItems.length > 0) {
+        boardItems[0].margin = 0;
+    }
 
     return (
         <div>

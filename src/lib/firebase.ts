@@ -16,6 +16,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+console.log('Firebase project ID:', process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID);
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const storage = getStorage(app);

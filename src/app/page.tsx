@@ -5,7 +5,7 @@ import BoardInteraction from '@/components/BoardInteraction/BoardInteraction';
 import { getNotes } from '@/lib/retrieveNotes';
 import { getPictures } from '@/lib/retrievePictures';
 import MessageModal from '@/components/MessageModal/MessageModal';
-
+export const dynamic = 'force-dynamic';
 type NoteData = {
     kind: 'note';
     color: string;
@@ -128,7 +128,8 @@ export default async function Home() {
                 </div>
                 <p className={styles.signature}>
                     this site made by{' '}
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">james :)</a>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">james</a>
+                    :)
                 </p>
             </div>
         </div>

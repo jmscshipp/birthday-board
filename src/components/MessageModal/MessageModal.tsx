@@ -12,14 +12,14 @@ export default function MessageModal({ isOpen, onClose }: MessageModalProps) {
         <div className={styles.background} onClick={onClose}>
             <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
                 <div className={styles.message}>
-                    Hi and welcome! This is a digital bulletin board for Selali&#39;s friends +
-                    family to leave birthday notes for her upcoming bday (March 25th). Notes can be
-                    short and sweet or you could share a memory if you feel like it. The goal is
-                    simply to make her feel celebrated :)
+                    Welcome! This is a digital bulletin board for Selali&#39;s friends + family to
+                    leave birthday notes for her upcoming bday (March 25th). Notes can be short and
+                    sweet or you could share a memory if you feel like it. The goal is simply to
+                    make her feel celebrated :)
                 </div>
                 <div className={styles.message}>
-                    Use the buttons under the title to add notes and photos, if you have any
-                    questions just message me!
+                    Use the buttons at the top to add notes and photos, if you have any questions
+                    just message me!
                 </div>
                 <div className={styles.message}>- James</div>
             </div>

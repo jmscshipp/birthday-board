@@ -31,7 +31,7 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
     const fonts: string[] = [
         'var(--font-geist-sans)',
         'var(--font-kalam)',
-        'var(--font-cedarville-cursive)',
+        'var(--font-dancing-script)',
         'var(--font-comic-relief)',
         'var(--font-new-rocker)',
         'var(--font-jersey-10)',

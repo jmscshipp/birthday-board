@@ -5,6 +5,7 @@ import BoardInteraction from '@/components/BoardInteraction/BoardInteraction';
 import { getNotes } from '@/lib/retrieveNotes';
 import { getPictures } from '@/lib/retrievePictures';
 import MessageModal from '@/components/MessageModal/MessageModal';
+import TitleNote from '@/components/TitleNote/TitleNote';
 
 export const dynamic = 'force-dynamic';
 
@@ -89,16 +90,9 @@ export default async function Home() {
 
     return (
         <div>
+            <BoardInteraction></BoardInteraction>
             <div className={styles.page}>
-                <Note
-                    color={'black'}
-                    message={'Title message here'}
-                    sender={'James'}
-                    placement={'center'}
-                    margin={0}
-                ></Note>
-                <BoardInteraction></BoardInteraction>
-
+                <TitleNote></TitleNote>
                 <div>
                     {boardItems.map((item, index) => {
                         if (item.kind === 'picture') {
@@ -130,12 +124,10 @@ export default async function Home() {
                         }
                     })}
                 </div>
-                <p className={styles.signature}>
-                    this site made by{' '}
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">james</a>
-                    :)
-                </p>
             </div>
+            <p className={styles.signature}>
+                this site made by <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">james</a> :)
+            </p>
         </div>
     );
 }

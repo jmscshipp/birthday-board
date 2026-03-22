@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: #1a0e00;
 }
 
 .page {
@@ -27,13 +28,14 @@ body {
 .signature {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    color: #f5deb3;
+    color: #38632a;
+    margin: 10px 0px;
     font-family: var(--font-geist-sans);
 }
 
 .signature a {
-    color: #f5deb3;
+    color: #38632a;
     text-decoration: underline;
     margin-left: 4px;
+    margin-right: 4px;
 }

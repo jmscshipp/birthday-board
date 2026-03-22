@@ -4,6 +4,8 @@ import NoteModal from '../NoteModal/NoteModal';
 import styles from './BoardInteraction.module.css';
 import MessageModal from '../MessageModal/MessageModal';
 import PictureModal from '../PictureModal/PictureModal';
+import { BsImage } from 'react-icons/bs';
+import { BsPencil } from 'react-icons/bs';
 
 export default function BoardInteraction() {
     const [noteModalOpen, setNoteModalOpen] = useState(false);
@@ -23,10 +25,12 @@ export default function BoardInteraction() {
         <div>
             <div className={styles.buttonContainer}>
                 <button className={styles.button} onClick={() => setNoteModalOpen(true)}>
-                    Add a note
+                    Add a note {''}
+                    <BsPencil size={20} />
                 </button>
                 <button className={styles.button} onClick={() => setPictureModalOpen(true)}>
-                    Add a photo
+                    Add a photo {''}
+                    <BsImage size={20} />
                 </button>
             </div>
             <MessageModal

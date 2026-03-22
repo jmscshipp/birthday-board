@@ -10,7 +10,7 @@ type PictureProps = {
 export default function Picture({ image, sender, margin }: PictureProps) {
     return (
         <div style={{ marginTop: margin + 'px' }} className={styles.container}>
-            <Pin color={'black'}></Pin>
+            <Pin color={'#38632a'}></Pin>
             <img src={image} className={styles.image}></img>
         </div>
     );

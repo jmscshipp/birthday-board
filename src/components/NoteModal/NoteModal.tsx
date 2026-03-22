@@ -76,20 +76,20 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
         <div className={styles.background} onClick={onClose}>
             <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
                 <div className={styles.header}>
-                    <button className={styles.exitButton} onClick={onClose}>
+                    <button className={`${styles.button} ${styles.square}`} onClick={onClose}>
                         x
                     </button>
                     <div className={styles.settings}>
                         <button
-                            style={{ fontFamily: font, lineHeight: '34px' }}
-                            className={styles.fontChangeButton}
+                            style={{ fontFamily: font }}
+                            className={styles.button}
                             onClick={cycleFont}
                         >
                             Font
                         </button>
                         <button
                             style={{ backgroundColor: pinColor }}
-                            className={styles.colorChangeButton}
+                            className={`${styles.button} ${styles.square}`}
                             onClick={cyclePinColor}
                         ></button>
                     </div>
@@ -125,7 +125,7 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
                     </div>
                 </div>
                 <button
-                    className={styles.pinButton}
+                    className={styles.button}
                     disabled={!noteText.trim() || !senderText.trim()}
                     onClick={() => saveNote()}
                 >

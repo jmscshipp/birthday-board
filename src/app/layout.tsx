@@ -51,8 +51,8 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-    title: 'Selali&#39;s Birthday Board',
-    description: 'Digital bulletin board for Selali&#39;s 23rd birthday',
+    title: "Selali's Birthday Board",
+    description: "Digital bulletin board for Selali's 23rd birthday",
 };
 
 export default function RootLayout({

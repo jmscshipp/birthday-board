@@ -6,9 +6,17 @@
 }
 
 .button {
-    font-family: var(--font-geist-sans);
+    height: 40px;
     background-color: white;
     border: 2px solid #edecea;
     border-style: outset;
     font-size: 21px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.button:active {
+    background-color: #f0f0f0;
+    border-style: inset;
 }

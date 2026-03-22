@@ -15,9 +15,11 @@
 .modal {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
-    width: 240px;
+    width: 80%;
+    padding: 15px;
+    background-color: white;
     font-size: 28px;
 }
 
@@ -27,7 +29,7 @@
     align-items: center;
     background-color: white;
     box-sizing: border-box;
-    width: 100%;
+    width: 260px;
     padding: 45px 15px 15px 15px;
     position: relative;
     margin: 15px 0px;
@@ -64,21 +66,21 @@
     font-size: 21px;
 }
 
-.exitButton {
-    height: 100%;
-    aspect-ratio: 1 / 1;
+.button {
+    height: 40px;
     background-color: white;
-    border: 2px solid white;
+    border: 2px solid #edecea;
     border-style: outset;
     font-size: 21px;
 }
 
-.pinButton {
-    height: 30px;
-    background-color: white;
-    border: 2px solid white;
-    border-style: outset;
-    font-size: 21px;
+.button:active {
+    background-color: #f0f0f0;
+    border-style: inset;
+}
+
+.square {
+    aspect-ratio: 1 / 1;
 }
 
 .pinWrapper {

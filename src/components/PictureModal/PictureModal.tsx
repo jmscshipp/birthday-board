@@ -55,7 +55,7 @@ export default function PictureModal({ isOpen, onClose }: PictureModalProps) {
         <div className={styles.background} onClick={onClose}>
             <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
                 <div className={styles.header}>
-                    <button className={styles.exitButton} onClick={onClose}>
+                    <button className={`${styles.button} ${styles.square}`} onClick={onClose}>
                         x
                     </button>
                 </div>
@@ -94,15 +94,14 @@ export default function PictureModal({ isOpen, onClose }: PictureModalProps) {
                         ></textarea>
                     </div>
                 </div>
+                <button
+                    className={styles.button}
+                    disabled={!selectedFile || !senderText.trim()}
+                    onClick={() => savePicture(selectedFile as File, senderText)}
+                >
+                    All done, pin it!
+                </button>
             </div>
-
-            <button
-                className={styles.pinButton}
-                disabled={!selectedFile || !senderText.trim()}
-                onClick={() => savePicture(selectedFile as File, senderText)}
-            >
-                All done, pin it!
-            </button>
         </div>
     );
 }

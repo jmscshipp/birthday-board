@@ -9,8 +9,8 @@
 .image {
     display: block;
     /* limits largest dimension to 75% of screen width*/
-    max-width: 400px;
-    max-height: 400px;
+    max-width: min(75vw, 400px);
+    max-height: min(75vw, 400px);
     width: auto;
     height: auto;
 }

@@ -10,9 +10,10 @@ import { BsImage } from 'react-icons/bs';
 type PictureModalProps = {
     isOpen: boolean;
     onClose: () => void;
+    onSubmit: () => void;
 };
 
-export default function PictureModal({ isOpen, onClose }: PictureModalProps) {
+export default function PictureModal({ isOpen, onClose, onSubmit }: PictureModalProps) {
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [previewURL, setPreviewURL] = useState<string | null>(null);
     const [senderText, setSenderText] = useState('');
@@ -31,6 +32,11 @@ export default function PictureModal({ isOpen, onClose }: PictureModalProps) {
 
     const savePicture = async (file: File, sender: string) => {
         try {
+            setPreviewURL(null);
+            setSelectedFile(null);
+            setSenderText('');
+            onSubmit();
+
             const storageRef = ref(storage, `pictures/${file.name}`);
             await uploadBytes(storageRef, file);
             const pictureURL = await getDownloadURL(storageRef);
@@ -41,11 +47,8 @@ export default function PictureModal({ isOpen, onClose }: PictureModalProps) {
                 margin: Math.round(Math.random() * -60),
                 createdAt: new Date(),
             });
-            setPreviewURL(null);
-            setSelectedFile(null);
-            setSenderText('');
+
             router.refresh();
-            onClose();
         } catch (error) {
             console.error('Having trouble saving picture:', error);
         }

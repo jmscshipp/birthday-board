@@ -21,15 +21,15 @@
     background-color: white;
     padding: 15px;
     gap: 20px;
-}
-.message {
     font-family: var(--font-geist-sans);
+    white-space: pre-wrap;
 }
-.okayButton {
-    margin-top: 20px;
-    height: 30px;
+
+.button {
+    height: 40px;
+    align-self: center;
     background-color: white;
-    border: 2px solid white;
+    border: 2px solid #edecea;
     border-style: outset;
-    font-size: 16px;
+    font-size: 21px;
 }

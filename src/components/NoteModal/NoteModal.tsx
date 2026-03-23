@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 type NoteModalProps = {
     isOpen: boolean;
     onClose: () => void;
+    onSubmit: () => void;
 };
 
 /* fonts
@@ -18,7 +19,7 @@ comic sans (comic)
 goth (rocker)
 pixel (jersey
 */
-export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
+export default function NoteModal({ isOpen, onClose, onSubmit }: NoteModalProps) {
     const [font, setFont] = useState('var(--font-geist-sans)');
     const [pinColor, setPinColor] = useState('#38632a');
     const [noteText, setNoteText] = useState('');
@@ -53,6 +54,12 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
 
     const saveNote = async () => {
         try {
+            setPinColor('#38632a');
+            setFont('var(--font-geist-sans)');
+            setNoteText('');
+            setSenderText('');
+            onSubmit();
+
             await addDoc(collection(db, 'notes'), {
                 message: noteText,
                 sender: senderText,
@@ -61,12 +68,8 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
                 margin: Math.round(Math.random() * -60),
                 createdAt: new Date(),
             });
-            setPinColor('#38632a');
-            setFont('var(--font-geist-sans)');
-            setNoteText('');
-            setSenderText('');
+
             router.refresh();
-            onClose();
         } catch (error) {
             console.error('Having trouble saving note:', error);
         }

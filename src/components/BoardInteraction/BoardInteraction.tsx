@@ -8,8 +8,15 @@ import { BsImage } from 'react-icons/bs';
 import { BsPencil } from 'react-icons/bs';
 
 export default function BoardInteraction() {
-    const [noteModalOpen, setNoteModalOpen] = useState(false);
     const [messageModalOpen, setMessageModalOpen] = useState(true);
+    const [messageModalText, setMessageModalText] =
+        useState(`Welcome! This is a digital bulletin board for Selali's friends + family to leave birthday notes for her upcoming bday (March 25th). 
+
+Use the buttons at the top to add notes and photos, if you have any questions just message me! 
+
+- James`);
+    const [messageModalButtonText, setMessageModalButtonText] = useState('Okay cool');
+    const [noteModalOpen, setNoteModalOpen] = useState(false);
     const [pictureModalOpen, setPictureModalOpen] = useState(false);
 
     // preventing background scrolling while modal is open
@@ -20,6 +27,12 @@ export default function BoardInteraction() {
             document.body.style.overflow = 'auto';
         }
     }, [noteModalOpen, messageModalOpen, pictureModalOpen]);
+
+    const openMessageModal = (message: string, buttonText: string) => {
+        setMessageModalText(message);
+        setMessageModalButtonText(buttonText);
+        setMessageModalOpen(true);
+    };
 
     return (
         <div>
@@ -34,17 +47,33 @@ export default function BoardInteraction() {
                 </button>
             </div>
             <MessageModal
+                message={messageModalText}
+                buttonText={messageModalButtonText}
                 isOpen={messageModalOpen}
-                onClose={() => setMessageModalOpen(false)}
+                onClose={() => {
+                    setMessageModalOpen(false);
+                }}
             ></MessageModal>
             <PictureModal
                 isOpen={pictureModalOpen}
                 onClose={() => setPictureModalOpen(false)}
+                onSubmit={() => {
+                    setPictureModalOpen(false);
+                    openMessageModal(
+                        "Your picture has been added :) Wait a couple seconds and it'll appear at the bottom of the board.",
+                        'Yay',
+                    );
+                }}
             ></PictureModal>
             <NoteModal
                 isOpen={noteModalOpen}
-                onClose={() => {
+                onClose={() => setNoteModalOpen(false)}
+                onSubmit={() => {
                     setNoteModalOpen(false);
+                    openMessageModal(
+                        "Your note has been pinned! Wait a couple seconds and it'll appear at the bottom of the board.",
+                        'Yay',
+                    );
                 }}
             ></NoteModal>
         </div>

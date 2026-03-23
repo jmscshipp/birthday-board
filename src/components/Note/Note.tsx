@@ -18,10 +18,7 @@ export default function Note({ color, font, message, sender, placement, margin }
     };
 
     return (
-        <div
-            style={{ marginTop: margin + 'px' }}
-            className={`${'fontFamily: ' + font} ${getPlacementStyle()}`}
-        >
+        <div style={{ fontFamily: font, marginTop: margin + 'px' }} className={getPlacementStyle()}>
             <div className={styles.container}>
                 <Pin color={color}></Pin>
                 <p className={styles.text}>{message}</p>

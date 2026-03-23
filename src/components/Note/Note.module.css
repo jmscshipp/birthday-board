@@ -23,14 +23,17 @@
 .placeLeft {
     display: flex;
     justify-content: flex-start;
+    width: 100%;
 }
 
 .placeRight {
     display: flex;
     justify-content: flex-end;
+    width: 100%;
 }
 
 .placeCenter {
     display: flex;
     justify-content: center;
+    width: 100%;
 }

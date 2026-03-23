@@ -23,13 +23,10 @@ export default function Note({ color, font, message, sender, placement, margin }
         return 180;
     };
 
-    console.log('Note rendered with message: ', message, 'size: ', getSize());
+    console.log('Note rendered with message: ', message, 'placement: ', getPlacementStyle());
     return (
-        <div
-            style={{ fontFamily: font, marginTop: margin + 'px', width: getSize() + 'px' }}
-            className={getPlacementStyle()}
-        >
-            <div className={styles.container}>
+        <div style={{ fontFamily: font, marginTop: margin + 'px' }} className={getPlacementStyle()}>
+            <div style={{ width: getSize() + 'px' }} className={styles.container}>
                 <Pin color={color}></Pin>
                 <p className={styles.text}>{message}</p>
                 <p className={styles.senderText}>{`- ` + sender}</p>

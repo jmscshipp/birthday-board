@@ -5,6 +5,8 @@ body {
 
 .page {
     min-height: 100vh;
+    max-width: 480px;
+    margin: 0 auto;
     padding: 10px;
 
     background-color: #a96f49;

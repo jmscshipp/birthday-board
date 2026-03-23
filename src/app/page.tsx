@@ -101,6 +101,13 @@ export default async function Home() {
                                     key={index}
                                     image={item.image}
                                     sender={item.sender}
+                                    placement={
+                                        index % 3 == 0
+                                            ? 'center'
+                                            : index % 2 == 0
+                                              ? 'left'
+                                              : 'right'
+                                    }
                                     margin={item.margin}
                                 />
                             );

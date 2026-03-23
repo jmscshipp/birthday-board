@@ -4,14 +4,23 @@ import Pin from '../Pin/Pin';
 type PictureProps = {
     image: string;
     sender: string;
+    placement: string;
     margin: number;
 };
 
-export default function Picture({ image, sender, margin }: PictureProps) {
+export default function Picture({ image, sender, placement, margin }: PictureProps) {
+    const getPlacementStyle = () => {
+        if (placement === 'left') return styles.placeLeft;
+        if (placement === 'right') return styles.placeRight;
+        return styles.placeCenter;
+    };
+
     return (
-        <div style={{ marginTop: margin + 'px' }} className={styles.container}>
-            <Pin color={'#38632a'}></Pin>
-            <img src={image} className={styles.image}></img>
+        <div style={{ marginTop: margin + 'px' }} className={getPlacementStyle()}>
+            <div style={{ marginTop: margin + 'px' }} className={styles.container}>
+                <Pin color={'#38632a'}></Pin>
+                <img src={image} className={styles.image}></img>
+            </div>
         </div>
     );
 }

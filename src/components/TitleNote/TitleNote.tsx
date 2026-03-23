@@ -1,4 +1,3 @@
-import Note from '../Note/Note';
 import Pin from '../Pin/Pin';
 import styles from './TitleNote.module.css';
 

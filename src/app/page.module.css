@@ -10,7 +10,7 @@ body {
     background-color: #a96f49;
     background-image: url(./bulletin-board-texture.jpg);
     background-repeat: repeat;
-    background-size: cover;
+    background-size: auto;
 
     border: 3px solid #27451d;
     box-shadow:

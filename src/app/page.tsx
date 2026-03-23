@@ -4,7 +4,6 @@ import Picture from '../components/Picture/Picture';
 import BoardInteraction from '@/components/BoardInteraction/BoardInteraction';
 import { getNotes } from '@/lib/retrieveNotes';
 import { getPictures } from '@/lib/retrievePictures';
-import MessageModal from '@/components/MessageModal/MessageModal';
 import TitleNote from '@/components/TitleNote/TitleNote';
 
 export const dynamic = 'force-dynamic';
@@ -12,6 +11,7 @@ export const dynamic = 'force-dynamic';
 type NoteData = {
     kind: 'note';
     color: string;
+    font: string;
     message: string;
     sender: string;
     margin: number;
@@ -25,57 +25,6 @@ type PictureData = {
 };
 
 type BoardItem = NoteData | PictureData;
-
-const testData: BoardItem[] = [
-    {
-        kind: 'note',
-        color: 'black',
-        message:
-            "Happy Birthday Selali! You're so special to me and I'm lucky to have you in my life :) Have a great day! another tes",
-        sender: 'howard',
-        margin: Math.random() * -60,
-    },
-    {
-        kind: 'note',
-        color: 'black',
-        message: "this is the note I'm leaving!! I'm putting it in the props!",
-        sender: 'howard',
-        margin: Math.random() * -60,
-    },
-    {
-        kind: 'picture',
-        image: '/images/botanic-garden-horizontal.jpg',
-        sender: 'howard',
-        margin: Math.random() * -60,
-    },
-    {
-        kind: 'note',
-        color: 'black',
-        message: "this is the note I'm leaving!! I'm putting it in the props!",
-        sender: 'howard',
-        margin: Math.random() * -60,
-    },
-    {
-        kind: 'note',
-        color: 'black',
-        message: "this is the note I'm leaving!! I'm putting it in the props!",
-        sender: 'howard',
-        margin: Math.random() * -60,
-    },
-    {
-        kind: 'note',
-        color: 'black',
-        message: "this is the note I'm leaving!! I'm putting it in the props!",
-        sender: 'howard',
-        margin: Math.random() * -60,
-    },
-    {
-        kind: 'picture',
-        image: '/images/botanic-garden-vertical.jpg',
-        sender: 'howard',
-        margin: Math.random() * -60,
-    },
-];
 
 export default async function Home() {
     const [notes, pictures] = await Promise.all([getNotes(), getPictures()]);
@@ -116,6 +65,7 @@ export default async function Home() {
                                 <Note
                                     key={index}
                                     color={item.color}
+                                    font={item.font}
                                     message={item.message}
                                     sender={item.sender}
                                     placement={

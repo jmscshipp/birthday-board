@@ -9,6 +9,7 @@ export const getNotes = async () => {
             id: doc.id,
             kind: 'note' as const,
             color: doc.data().color,
+            font: doc.data().font,
             message: doc.data().message,
             sender: doc.data().sender,
             margin: doc.data().margin,

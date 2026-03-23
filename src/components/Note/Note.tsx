@@ -17,8 +17,18 @@ export default function Note({ color, font, message, sender, placement, margin }
         return styles.placeCenter;
     };
 
+    const getSize = () => {
+        if (message.length > 120) return 240;
+        if (message.length > 105) return 220;
+        return 180;
+    };
+
+    console.log('Note rendered with message: ', message, 'size: ', getSize());
     return (
-        <div style={{ fontFamily: font, marginTop: margin + 'px' }} className={getPlacementStyle()}>
+        <div
+            style={{ fontFamily: font, marginTop: margin + 'px', width: getSize() + 'px' }}
+            className={getPlacementStyle()}
+        >
             <div className={styles.container}>
                 <Pin color={color}></Pin>
                 <p className={styles.text}>{message}</p>

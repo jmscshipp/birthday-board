@@ -17,8 +17,7 @@
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    width: 80%;
-    max-width: 340px;
+    width: min(80%, 340px);
     padding: 15px;
     font-size: 28px;
     background-color: white;

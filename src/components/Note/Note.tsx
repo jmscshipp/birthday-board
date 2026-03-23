@@ -18,9 +18,9 @@ export default function Note({ color, font, message, sender, placement, margin }
     };
 
     const getSize = () => {
-        if (message.length > 120) return 240;
-        if (message.length > 105) return 220;
-        return 180;
+        if (message.length > 120) return 220;
+        if (message.length > 105) return 200;
+        return 160;
     };
 
     console.log('Note rendered with message: ', message, 'placement: ', getPlacementStyle());

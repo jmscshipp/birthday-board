@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import {
     Geist,
     Kalam,
-    Cedarville_Cursive,
     Comic_Relief,
     New_Rocker,
     Jersey_10,
@@ -16,12 +15,6 @@ const geistSans = Geist({
 
 const kalam = Kalam({
     variable: '--font-kalam',
-    subsets: ['latin'],
-    weight: '400',
-});
-
-const cedarvilleCursive = Cedarville_Cursive({
-    variable: '--font-cedarville-cursive',
     subsets: ['latin'],
     weight: '400',
 });
@@ -66,7 +59,6 @@ export default function RootLayout({
                 className={`
                 ${geistSans.variable} 
                 ${kalam.variable}
-                ${cedarvilleCursive.variable} // remove
                 ${comicRelief.variable}
                 ${newRocker.variable}
                 ${jersey10.variable}

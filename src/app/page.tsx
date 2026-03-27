@@ -39,6 +39,10 @@ export default async function Home() {
 
     return (
         <div>
+            <p className={styles.signature}>
+                this site has a new home! archived at{' '}
+                <a href="https://audio-sludge.neocities.org/">Selali&#39;s neocities page</a>
+            </p>
             <BoardInteraction></BoardInteraction>
             <div className={styles.page}>
                 <TitleNote></TitleNote>

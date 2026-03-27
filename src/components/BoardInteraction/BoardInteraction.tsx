@@ -10,12 +10,12 @@ import { BsPencil } from 'react-icons/bs';
 export default function BoardInteraction() {
     const [messageModalOpen, setMessageModalOpen] = useState(true);
     const [messageModalText, setMessageModalText] =
-        useState(`Welcome! This is a digital bulletin board for Selali's friends + family to leave birthday notes for her upcoming bday (March 25th). 
+        useState(`Welcome! Since Selali's bday has passed, the board isn't free to be added to anymore. Thanks to everyone who left a message :)
 
-Use the buttons at the top to add notes and photos, if you have any questions just message me! 
+The site will still be up for viewing until next year, but eventually it'll move to Selali's neocities page! The link is at the top of the site.
 
 - James`);
-    const [messageModalButtonText, setMessageModalButtonText] = useState('Okay cool');
+    const [messageModalButtonText, setMessageModalButtonText] = useState('Sounds good');
     const [noteModalOpen, setNoteModalOpen] = useState(false);
     const [pictureModalOpen, setPictureModalOpen] = useState(false);
 
@@ -36,7 +36,7 @@ Use the buttons at the top to add notes and photos, if you have any questions ju
 
     return (
         <div>
-            <div className={styles.buttonContainer}>
+            {/*<div className={styles.buttonContainer}>
                 <button className={styles.button} onClick={() => setNoteModalOpen(true)}>
                     Add a note {''}
                     <BsPencil size={20} />
@@ -45,7 +45,7 @@ Use the buttons at the top to add notes and photos, if you have any questions ju
                     Add a photo {''}
                     <BsImage size={20} />
                 </button>
-            </div>
+            </div>*/}
             <MessageModal
                 message={messageModalText}
                 buttonText={messageModalButtonText}
